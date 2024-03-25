@@ -1,0 +1,125 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:533267084013:task-definition/agility_backend_ecs:5",
+  "containerDefinitions": [
+    {
+      "name": "agility_container",
+      "image": "533267084013.dkr.ecr.us-east-1.amazonaws.com/agility:latest",
+      "cpu": 0,
+      "portMappings": [
+        {
+          "name": "agi-exposed-port",
+          "containerPort": 80,
+          "hostPort": 80,
+          "protocol": "tcp",
+          "appProtocol": "http"
+        }
+      ],
+      "essential": true,
+      "environment": [],
+      "mountPoints": [],
+      "volumesFrom": [],
+      "secrets": [
+        {
+          "name": "PORT",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/PORT"
+        },
+        {
+          "name": "AWS_DYNAMODB_USERS",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/DYNAMODB_USERS"
+        },
+        {
+          "name": "AWS_DYNAMODB_MUSCLES",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/DYNAMODB_MUSCLES"
+        },
+        {
+          "name": "AWS_COGNITO_POOL_ID",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/COGNITO_POOL_ID"
+        },
+        {
+          "name": "AWS_COGNITO_CLIENT_ID",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/COGNITO_CLIENT_ID"
+        },
+        {
+          "name": "AWS_ACCESS_KEY_ID",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/ACCESS_KEY_ID"
+        },
+        {
+          "name": "AWS_SECRET_ACCESS_KEY",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/SECRET_ACCESS_KEY"
+        },
+        {
+          "name": "AWS_REGION",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/REGION"
+        },
+        {
+          "name": "AWS_DYNAMODB_WORKOUTS",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/DYNAMODB_WORKOUTS"
+        },
+        {
+          "name": "AWS_S3_BUCKET_NAME",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/S3_BUCKET_NAME"
+        },
+        {
+          "name": "AWS_DYNAMODB_EXERCISES",
+          "valueFrom": "arn:aws:ssm:us-east-1:533267084013:parameter/DYNAMODB_EXERCISES"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-create-group": "true",
+          "awslogs-group": "/ecs/agility_backend_ecs",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "family": "agility_backend_ecs",
+  "taskRoleArn": "arn:aws:iam::533267084013:role/agility_ecs_permissions",
+  "executionRoleArn": "arn:aws:iam::533267084013:role/agility_ecs_permissions",
+  "networkMode": "awsvpc",
+  "revision": 5,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+    {
+      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    },
+    {
+      "name": "ecs.capability.execution-role-awslogs"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "name": "ecs.capability.execution-role-ecr-pull"
+    },
+    {
+      "name": "ecs.capability.secrets.ssm.environment-variables"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+    },
+    {
+      "name": "ecs.capability.task-eni"
+    },
+    {
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+    }
+  ],
+  "placementConstraints": [],
+  "compatibilities": ["EC2", "FARGATE"],
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "256",
+  "memory": "512",
+  "registeredAt": "2024-02-03T05:44:04.655Z",
+  "registeredBy": "arn:aws:iam::533267084013:root",
+  "tags": []
+}

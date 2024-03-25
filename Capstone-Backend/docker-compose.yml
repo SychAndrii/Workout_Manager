@@ -1,0 +1,20 @@
+services:
+  dynamodb-local:
+    image: amazon/dynamodb-local
+    ports:
+      # Default port is 8000
+      - '8000:8000'
+    # Run the database in memory, see:
+    # https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.UsageNotes.html
+    command: ['-jar', 'DynamoDBLocal.jar', '-inMemory']
+  
+  localstack:
+    # https://hub.docker.com/r/localstack/localstack
+    image: localstack/localstack
+    ports:
+      - '4566:4566'
+    environment:
+      # See https://docs.localstack.cloud/localstack/configuration/ and
+      # https://hub.docker.com/r/localstack/localstack for config details.
+      # We only want to run S3
+      - SERVICES=s3

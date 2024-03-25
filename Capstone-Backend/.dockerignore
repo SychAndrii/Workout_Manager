@@ -1,0 +1,44 @@
+# Testing stuff
+coverage
+
+
+# Node modules and logs
+node_modules
+npm-debug.log
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Git
+.git
+.gitignore
+
+# Tests
+**/__tests__/
+**/__mocks__/
+**/*.spec.ts
+**/*.test.ts
+coverage
+
+# TypeScript source files (they will be compiled to JavaScript)
+**/*.ts
+!src/**/*.ts
+
+# Local environment files
+# .env
+
+# IDE-specific files
+.vscode
+*.sublime*
+
+# Operating system generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Optional npm cache directory
+.npm
