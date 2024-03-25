@@ -1,0 +1,6 @@
+[submodule "Capstone-Backend"]
+	path = Capstone-Backend
+	url = https://github.com/Mounayer/Capstone-Backend.git
+[submodule "Capstone-Frontend"]
+	path = Capstone-Frontend
+	url = https://github.com/aamfahim/Capstone-Frontend.git
