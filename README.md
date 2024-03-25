@@ -1,3 +1,9 @@
+# Original repositories
+
+[Backend](https://github.com/Mounayer/Capstone-Backend/tree/main)
+[Frontend](https://github.com/aamfahim/Capstone-Frontend/tree/main)
+[Main Repository](https://github.com/BTS-2023-2024/Group_02)
+
 # Developers
 
 | Name                    | Role           | Github                                        | Email                      |
